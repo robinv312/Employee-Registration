@@ -7,10 +7,7 @@ import { logout } from "../../actions/auth";
 export const Navbar = ({ auth, logout }) => {
   const authLinks = (
     <ul>
-    <li>
-       
-      </li>
-     <li>
+ <li>
         <Link onClick={logout} to="">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">Logout</span>

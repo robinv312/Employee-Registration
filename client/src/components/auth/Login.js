@@ -17,6 +17,7 @@ const Login = ({ login, isAuthenticated }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     login({ email, password });
+     
   };
 
   //Redirect after log in
@@ -26,8 +27,7 @@ const Login = ({ login, isAuthenticated }) => {
   return (
     <Fragment>
       <div className="login-width">
-        {/* <h1 className="large text-primary">Sign In</h1> */}
-        <div className="logo-div">
+       <div className="logo-div">
           <img src={logo} alt="logo"  className="logo-size"></img>
         </div>
         <p className="lead text-center">
