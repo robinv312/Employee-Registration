@@ -28,5 +28,5 @@ how to run in local?
 Prerequisite - Must have node installed in the system
 
 Open the Application in browser:
-https://infinite-mesa-80056.herokuapp.com/
+https://emp-reg.herokuapp.com/
 
