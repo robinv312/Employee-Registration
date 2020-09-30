@@ -9,10 +9,7 @@ const ProfileItem = ({
    name,
    avatar,
     email,
-    location,
-    company,
-    skills,
-  },
+ },
   auth: { isAuthenticated, user },
 }) => {
 return (
@@ -22,7 +19,7 @@ return (
         <h4>{name}</h4>
         <Typography component="span" color="textSecondary" variant="h6">
           {email}
-          {company && <span> at {company}</span>}
+         
         </Typography>
         <br />
         <p></p>
@@ -32,7 +29,7 @@ return (
           color="textSecondary"
           gutterBottom
         >
-          {location && <span>{location}</span>}
+          
         </Typography>
         <br />
 </div>
