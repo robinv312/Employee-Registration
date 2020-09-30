@@ -22,7 +22,10 @@ how to run in local?
 1.Clone the repository Employee-Registration to the local.
 2.Import it in to the workspace.
 3.After navigating to the path in terminal run 'npm install --save' to install the packages used.
-4.run the command 'npm run dev'
+4.Run the command 'npm run dev'
 
 prerequisite - Must have node installed in the system
+
+Open the Application in browser:
+https://infinite-mesa-80056.herokuapp.com/
 
