@@ -2,48 +2,38 @@ import React from "react";
 import { shallow, configure, render, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import Login from "../src/components/auth/Login";
+import store from "../src/store";
+import { MemoryRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+function shallowSetup() {
+  configure({ adapter: new Adapter() });
 
+  // wrapper instance around rendered output
+  const wrapper = mount(
+    <Provider store={store}>
+      <MemoryRouter>
+        <Login store={store} />
+      </MemoryRouter>
+    </Provider>
+  );
 
-describe('Login component tests', ()=> {
-    const wrapper = mount(<Login />);
+  return {
+    wrapper,
+  };
+}
+describe("Login component tests", () => {
+  const { wrapper } = shallowSetup();
+    it('testing the email and password fields', () => {
+        
+         const email = wrapper.find("input").at(0);
+         email.simulate('focus');
+         email.simulate("change",{target:{value:"test@gmail.com"}});
 
-    it('should have 3 input component', ()=> {
+         const password = wrapper.find("input").at(0);
+         password.simulate('focus');
+         password.simulate("change",{target:{value:"123456"}});
 
-        //There should be three inputs
-        expect(wrapper.find('input')).toHaveLength(3);
-
-        //input 1 should be of type email
-        expect(wrapper.find('input')
-        .type().defaultProps.type)
-        .toEqual('email');
-
-        //input 2 should be of type password
-        expect(wrapper.find('input')
-        .type().defaultProps.type)
-        .toEqual('password');
-
-        //input 3 should be of type submit
-        expect(wrapper.find('input')
-        .type().defaultProps.type)
-        .toEqual('submit');
-
-        //Button should have matching text
-        expect(wrapper.find('input').text()).toEqual('Login');
-    });
-        it('should have an empty email and password state var', ()=> {
-        //Optionally test to check if password and email are empty strings 
-        expect(wrapper.state('email')).toEqual('');
-        expect(wrapper.state('password')).toEqual('');
-    });
-
-    it('should test email and password presence', () => {
-        //should return true 
-         expect(validateEmailAndPasswordPresence('email@email.com', 
-         'password').toEqual(true));
-
-         //should return false
-          expect(validateEmailAndPasswordPresence('', 
-         '').toEqual(false));
+         wrapper.find("input").at(2).simulate("click");
     });
 
 });
