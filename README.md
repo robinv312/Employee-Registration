@@ -25,7 +25,7 @@ how to run in local?
 2.Import it in to the workspace.
 3.Navigate to the folder and 'run npm install --save' to install the node modules.
 4.After navigating to the path(imported folder path)/client in terminal run 'npm install --save' to install the packages used in react.
-5.Run the command 'npm run dev'
+5.Run the command 'npm run dev' to start the server.
 
 Prerequisite - Must have node installed in the system
 
